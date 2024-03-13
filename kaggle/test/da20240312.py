@@ -2,26 +2,26 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 # 1. 데이터 로드
 titanic_df = sns.load_dataset('titanic')
 
+df = titanic_df.drop(columns=['survived']) #독립변수를 제외한 종속변수들만 처리.
+
+
+
 # 2. 데이터 탐색
-# EDA 탐색적 데이터 분석 수행하기
-# .info() 함수로 데이터 컬럼별 타입(자료형), 값이 있는 행(Non-Null)의 갯수 등을 알 수 있습니다.
-print( titanic_df.info() )
+# 해당 데이터의 범주형 데이터와 수치형 데이터를 확인한다.
+print('\n','데이터의 형태 확인','\n')
+a = df.info()
+   
+str_cols = []
+num_cols = []
 
-print( titanic_df.head() )
+for i in df.columns:
+    if len(df[i].unique()) > 9:
+        num_cols.append(i)
+    else:
+        str_cols.append(i)
 
-# 3. 범주형 컬럼과 수치형 컬럼 분리.
-category_cols  = ['sex','embarked','class','who','adult_male','deck','embark_town','alive','alone']
-numerical_cols = ['age','sibsp','parch','fare']
-
-
-print('\n','4. 데이터의 통계량으로 살펴보기','\n')
-print(titanic_df.describe())
-
-print('\n','5. value_counts()를 통해 각 컬럼별로 몇 개의 row가 있는지 셀 수 있습니다','\n')
-for i in category_cols:
-    print( i , '카운터 ::')
-    print( titanic_df.loc[:,i].value_counts() ,'\n')
+print( '카테 : ',str_cols )
+print( '숫치 : ',num_cols )

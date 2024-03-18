@@ -22,3 +22,5 @@
 <a href='https://www.kaggle.com/'>캐글 가입하기</a></br>
 <a href='https://www.kaggle.com/discussions/getting-started?sort=votes'>초보자 토론 참여</a></br>
 <a href='https://www.kaggle.com/c/digit-recognizer'>Digit Recognizer 경쟁참여</a></br>
+Digit Recognizer 경쟁참여 하여 notebook 복사와 자료 재출을 해보자.</br>
+<a href='https://www.kaggle.com/code/grroverpr/gradient-boosting-simplified'>노트북 사용 방법</a></br>

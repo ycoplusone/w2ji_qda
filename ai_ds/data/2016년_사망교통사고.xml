@@ -1,0 +1,23 @@
+<root>
+	<dt>
+		<year>2016</year>
+		<datetime>2016122320</datetime>
+		<N>35</N>
+		<daynight>야간</daynight>
+		<weekday>금</weekday>
+	</dt>
+	<dt>
+		<year>2016</year>
+		<datetime>2016122517</datetime>
+		<N>48</N>
+		<daynight>주간</daynight>
+		<weekday>일</weekday>
+	</dt>
+	<dt>
+		<year>2016</year>
+		<datetime>2016122519</datetime>
+		<N>05</N>
+		<daynight>야간</daynight>
+		<weekday>일</weekday>
+	</dt>
+</root>

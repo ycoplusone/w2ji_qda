@@ -6,11 +6,7 @@
 
 # 타이타닉 생존자 분석<br>
 [1.Titanic - Machine Learning from Disaster](https://www.kaggle.com/c/titanic)
-
-
-
-
-
+![화면](ttps://github.com/ycoplusone/w2ji_qda/blob/main/kaggle/guide/img/titanic001.png)
 
 
 

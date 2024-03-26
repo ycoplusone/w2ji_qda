@@ -1,8 +1,8 @@
 <h1>Kaggle Guide</h1></br>
 <a href='https://www.kaggle.com/learn-guide/kaggle-competitions'>Kaggle Competitions Guide</a></br>
-> 타이타닉 생존자 분석 
-> <a href='https://www.kaggle.com/code/alexisbcook/titanic-tutorial/notebook'>완전 처음 시작하는 경우</a></br>
-> <a href='https://www.kaggle.com/competitions/titanic/code?competitionId=3136&sortBy=voteCount'>조금 이해했을경우</a></br>
+타이타닉 생존자 분석 
+<a href='https://www.kaggle.com/code/alexisbcook/titanic-tutorial/notebook'>완전 처음 시작하는 경우</a></br>
+<a href='https://www.kaggle.com/competitions/titanic/code?competitionId=3136&sortBy=voteCount'>조금 이해했을경우</a></br>
 
 
 

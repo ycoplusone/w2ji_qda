@@ -25,5 +25,21 @@
 Digit Recognizer 경쟁참여 하여 notebook 복사와 자료 재출을 해보자.</br>
 <a href='https://www.kaggle.com/code/grroverpr/gradient-boosting-simplified'>노트북 사용 방법</a></br>
 
-<h1>경진대회와 노트북<h1><br>
-<a href=''></a></br>
+<h1>경진대회<h1><br>
+<h4>경진대회규칙 이해하기.</h4><br>
+<a href='https://www.kaggle.com/progression'>캐글진행순서</a></br>
+경진대회 규칙 확인하기 - 경진대회마다 규칙이 다르다.</br>
+평가 함수 확인</br>
+1일 점수 확인 획수 - 횟수에 제한이 있다</br>
+
+<h4>데이터를 더 잘 이해하기</h4><br>
+데이터를 잘 이해하기.<br>
+경진대회 노트북 자주 분석하기<br>
+<a href='https://www.kaggle.com/c/santander-value-prediction-challenge'>santander-value-prediction-challenge</a></br>
+<a href='https://www.kaggle.com/code/headsortails/breaking-bank-santander-eda'>breaking-bank-santander-eda</a></br>
+
+<h4>최신 기술 살펴보기</h4><br>
+<a href='https://github.com/the-black-knight-01/Data-Science-Competitions'>입상자 인터뷰와 소스</a></br>
+<a href='https://www.kaggle.com/discussions/general/17120'>XGboost 튜닝 문의</a></br>
+
+

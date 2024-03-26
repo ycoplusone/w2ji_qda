@@ -4,7 +4,7 @@
 <a href='https://www.kaggle.com/competitions/titanic/code?competitionId=3136&sortBy=voteCount'>Normal Version</a></br>
 
 # 타이타닉 생존자 분석<br>
-[1.Titanic - Machine Learning from Disaster]:https://www.kaggle.com/c/titanic
+[1.Titanic - Machine Learning from Disaster](https://www.kaggle.com/c/titanic)
 
 
 

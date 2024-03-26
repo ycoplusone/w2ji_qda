@@ -53,4 +53,4 @@ Digit Recognizer 경쟁참여 하여 notebook 복사와 자료 재출을 해보�
 
 
 [![Solved.ac
-프로필](http://mazassumnida.wtf/api/generate_badge?boj=ycoplusone)](https://solved.ac/ycopluosne)
+프로필](http://mazassumnida.wtf/api/generate_badge?boj=ycoplusone)](https://solved.ac/ycoplusone)

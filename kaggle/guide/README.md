@@ -50,7 +50,4 @@ Digit Recognizer 경쟁참여 하여 notebook 복사와 자료 재출을 해보�
 <a href='https://www.kaggle.com/discussions/general/17120'>XGboost 튜닝 문의</a></br>
 
 
-
-
-[![Solved.ac
-프로필](http://mazassumnida.wtf/api/generate_badge?boj=ycoplusone)](https://solved.ac/ycoplusone)
+<img src="http://mazandi.herokuapp.com/api?handle=ycoplusone&theme=warm"/>

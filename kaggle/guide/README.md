@@ -1,3 +1,10 @@
+<h1>Kaggle Guide</h1></br>
+<a href='https://www.kaggle.com/learn-guide/kaggle-competitions'>Kaggle Competitions Guide</a></br>
+<a href='https://www.kaggle.com/code/alexisbcook/titanic-tutorial/notebook'>완전 처음 시작하는 경우</a></br>
+<a href='https://www.kaggle.com/competitions/titanic/code?competitionId=3136&sortBy=voteCount'>조금 이해했을경우</a></br>
+
+
+
 <h1>참고사이트</h1></br>
 <a href='https://github.com/dybooksIT/kaggle-guide'>캐글 가이드 저장소</a></br>
 <a href='https://www.facebook.com/groups/KaggleKoreaOpenGroup'>페이스북 캐글 코리아 그룹</a></br>
@@ -43,3 +50,7 @@ Digit Recognizer 경쟁참여 하여 notebook 복사와 자료 재출을 해보�
 <a href='https://www.kaggle.com/discussions/general/17120'>XGboost 튜닝 문의</a></br>
 
 
+
+
+[![Solved.ac
+프로필](http://mazassumnida.wtf/api/generate_badge?boj=ycoplusone)](https://solved.ac/ycopluosne)

@@ -1,7 +1,8 @@
 <h1>Kaggle Guide</h1></br>
 <a href='https://www.kaggle.com/learn-guide/kaggle-competitions'>Kaggle Competitions Guide</a></br>
-<a href='https://www.kaggle.com/code/alexisbcook/titanic-tutorial/notebook'>완전 처음 시작하는 경우</a></br>
-<a href='https://www.kaggle.com/competitions/titanic/code?competitionId=3136&sortBy=voteCount'>조금 이해했을경우</a></br>
+> 타이타닉 생존자 분석 
+> <a href='https://www.kaggle.com/code/alexisbcook/titanic-tutorial/notebook'>완전 처음 시작하는 경우</a></br>
+> <a href='https://www.kaggle.com/competitions/titanic/code?competitionId=3136&sortBy=voteCount'>조금 이해했을경우</a></br>
 
 
 
@@ -50,4 +51,3 @@ Digit Recognizer 경쟁참여 하여 notebook 복사와 자료 재출을 해보�
 <a href='https://www.kaggle.com/discussions/general/17120'>XGboost 튜닝 문의</a></br>
 
 
-<img src="http://mazandi.herokuapp.com/api?handle=ycoplusone&theme=warm"/>

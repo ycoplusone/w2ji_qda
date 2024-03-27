@@ -1,5 +1,4 @@
-'''
-<h1>Kaggle Guide</h1>
+# Kaggle Guide
 [Kaggle Competitions Guide](https://www.kaggle.com/learn-guide/kaggle-competitions)
 [Easy Version](https://www.kaggle.com/code/alexisbcook/titanic-tutorial/notebook)
 [Normal Version](https://www.kaggle.com/competitions/titanic/code?competitionId=3136&sortBy=voteCount)
@@ -7,7 +6,7 @@
 
 # 타이타닉 생존자 분석
 [1.Titanic - Machine Learning from Disaster](https://www.kaggle.com/code/alexisbcook/titanic-tutorial/notebook)
-'''
+
 
 
 

@@ -9,3 +9,5 @@
 [ 3.4여러개의 DataFrame 결합 ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03_04.py)
 
 [ 3.5 Binning & Creating Dummy variables ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03_05.py)
+
+[ 3.6 예제 데이터 및 실습문제 ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03_06.py)

@@ -1,7 +1,7 @@
 # 타이타닉 생존자 분석
 
 [1.결측치 처리 방법 가이드](https://github.com/ycoplusone/w2ji_qda/blob/main/kaggle/guide/t0001.py)
-** [ 결측처리 참고 ](https://velog.io/@drudger/%EA%B2%B0%EC%B8%A1%EC%B9%98%EC%B2%98%EB%A6%AC)
+* [ 결측처리 참고 ](https://velog.io/@drudger/%EA%B2%B0%EC%B8%A1%EC%B9%98%EC%B2%98%EB%A6%AC)
 
 
 

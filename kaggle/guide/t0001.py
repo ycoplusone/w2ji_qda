@@ -34,9 +34,9 @@ df = pd.read_csv('D:\\python_workspace\\w2ji_qda\\kaggle\\guide\\data\\titanic\\
     - 데이터의 결측은 모델 학습과정에서 문제르르 일으킬 수 있다.
     - 이를 해결하기 위해 여러방법으로 결측치 처리한다.
     - 결측치 처리 방법으로 크게 제거(Deletion)와 대치(Imputation)이 있다.
-'''
+    ※ 결측치를 확인하는 과정에서는 데이터의 도메인 지식이 필요하다.
+    ※ 결측치를 삭제하는 방법으로 처리하는것은 많은 리스크가 따른다.
 
-'''
 2. 대치(Imputation)
 - 평균을  대치 => 평균은 모든 관측치의 값을 모두반영하므로 이상치의 영향을 많이 받기 때문에 주의가 필요
 - 중앙값 대치  => 중앙값은 모든 관측치의 값을 모두 반영하지 않으므로 이상치의 영향을 덜 받는다.
@@ -45,14 +45,23 @@ df = pd.read_csv('D:\\python_workspace\\w2ji_qda\\kaggle\\guide\\data\\titanic\\
      => Round robin 방식을 반복하여 결측 값을 회귀하는 방식
      => 결측값을 회귀하는 방식으로 처리하기 때문에 이 방식은 수치형 변수에 자주 사용된다.
      => 범주형 변수에도 사용이 가능하지만 조금더 복잡하고 먼저 인코딩 해야 한다.
+
+- fillna()를 이용한 대치
+    => 특정값으로 대치
+    => 특정열로의 값으로 대치
+    => 결측치 바로 이전의 값으로 대치
+    => 결측치 바로 이후 값으로 대치     
+    
+'''
+
 '''
 # 예제
 def func_imputer(df , col , str ):
-    ''' 대치 함수  
-    df : DataFrame
-    col : 컬럼
-    str : 'mean', 'median', 'most_frequent', 'constant' 만 가능 , 평균 ,중앙 , 최빈 , 정해진값
-    '''
+    # 대치 함수  
+    #df : DataFrame
+    #col : 컬럼
+    #str : 'mean', 'median', 'most_frequent', 'constant' 만 가능 , 평균 ,중앙 , 최빈 , 정해진값
+    
     # SimpleImputer의 인스턴스 생성
     imputer_mean = SimpleImputer(strategy= str)
     # 열을 2d 배열로 재구성 해야 한다.
@@ -68,11 +77,37 @@ print('평균 : ',mean[888])
 print('중앙 : ',median[888])
 print('최빈 : ',most_frequent[888])
 
-# MISC 자동 대치
-aa = df['Age'].values.reshape(-1,1)
-imputer_mice = IterativeImputer( max_iter=10 ,  random_state=900 , imputation_order='roman' , skip_complete=True , initial_strategy='mean')
-numeric_data = imputer_mice.fit_transform( aa )
-print( np.round(numeric_data[888],0) )
+def func_misc_imputer( df , col , str ):    
+    # MICE로 대치  ( Multiveriate Imputation by Chained Equations ) 다중대치법
+    # df : DataFrame
+    # col : 컬럼
+    # str : 'mean', 'median', 'most_frequent', 'constant' 만 가능 , 평균 ,중앙 , 최빈 , 정해진값    
+    
+    __df = df[col].values.reshape(-1,1)     
+    imputer_mice = IterativeImputer( initial_strategy= str)
+    numeric_data = imputer_mice.fit_transform( __df )
+    return numeric_data
+
+print( 'mice : ',func_misc_imputer(df , 'Age' , 'mean')[888]  )
+
+# fillna 로 대치
+print( df.Age.fillna( 99 )[886:890] ) # 특정값으로 대치
+print( df.Age.fillna( df.Fare )[886:890] ) # 특정열의 값으로 대치
+print( df.Age.fillna( method = 'ffill' )[886:890] ) # 결측치 이전값으로 대치
+print( df.Age.fillna( method = 'bfill' )[886:890] ) # 결측치 이후값으로 대치
+'''
+
+'''
+타이타닉 자료의 결측치 처리.
+결측치 항목 Age(수치형) , Cabin(범주형) , Embarked(범주형)
+Pclass , Sex , Survived 의 각각의 평균 ,  중앙값 , 최빈값 을 측정하여 대치한다.
+'''
+# 수치형의 경우 대치 방식
+_tmp =  df.groupby(['Pclass','Sex','Survived'])['Age'].agg(['mean','median','std','max','min']) 
+print(_tmp) # 평균과 중앙값 그리고 표전편차를 확인후 특이사항을 확인후 대치할 값의 방식을 정한다. 평균값으로 대치 하기로 한다.
+
+# 범주형의 경우 대치 방식
+
 
 
 

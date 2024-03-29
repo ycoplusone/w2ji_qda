@@ -21,7 +21,8 @@
 import numpy as np
 import scipy as sp
 import pandas as pd
-from sklearn.impute import SimpleImputer
+from sklearn.experimental import enable_iterative_imputer
+from sklearn.impute import SimpleImputer , IterativeImputer
 import matplotlib as mpl
 import seaborn as sns
 
@@ -35,40 +36,43 @@ df = pd.read_csv('D:\\python_workspace\\w2ji_qda\\kaggle\\guide\\data\\titanic\\
     - 결측치 처리 방법으로 크게 제거(Deletion)와 대치(Imputation)이 있다.
 '''
 
+'''
+2. 대치(Imputation)
+- 평균을  대치 => 평균은 모든 관측치의 값을 모두반영하므로 이상치의 영향을 많이 받기 때문에 주의가 필요
+- 중앙값 대치  => 중앙값은 모든 관측치의 값을 모두 반영하지 않으므로 이상치의 영향을 덜 받는다.
+- 최반값 대치  => 최반값을 이용한 이방식은 빈도수를 사용하기 때문에 범주형 변수에 사용하는것이 좋다.
+- MICE로 대치  ( Multiveriate Imputation by Chained Equations ) 다중대치법
+     => Round robin 방식을 반복하여 결측 값을 회귀하는 방식
+     => 결측값을 회귀하는 방식으로 처리하기 때문에 이 방식은 수치형 변수에 자주 사용된다.
+     => 범주형 변수에도 사용이 가능하지만 조금더 복잡하고 먼저 인코딩 해야 한다.
+'''
+# 예제
 def func_imputer(df , col , str ):
     ''' 대치 함수  
     df : DataFrame
     col : 컬럼
-    str : 'mean', 'median', 'most_frequent', 'constant' 만 가능
+    str : 'mean', 'median', 'most_frequent', 'constant' 만 가능 , 평균 ,중앙 , 최빈 , 정해진값
     '''
     # SimpleImputer의 인스턴스 생성
     imputer_mean = SimpleImputer(strategy= str)
     # 열을 2d 배열로 재구성 해야 한다.
     __df = df[col].values.reshape(-1,1)     
     return  np.round( imputer_mean.fit_transform( __df ) ,0)
-'''
-2. 대치(Imputation)
-- 평균을  대치 => 평균은 모든 관측치의 값을 모두반영하므로 이상치의 영향을 많이 받기 때문에 주의가 필요
-- 중앙값 대치  => 중앙값은 모든 관측치의 값을 모두 반영하지 않으므로 이상치의 영향을 덜 받는다.
-- 최반값 대치  => 최반값을 이용한 이방식은 빈도수를 사용하기 때문에 범주형 변수에 사용하는것이 좋다.
-- MICE로 대치  
-     => Round robin 방식을 반복하여 결측 값을 회귀하는 방식
-     => 결측값을 회귀하는 방식으로 처리하기 때문에 이 방식은 수치형 변수에 자주 사용된다.
-     => 범주형 변수에도 사용이 가능하지만 조금더 복잡하고 먼저 인코딩 해야 한다.
 
-
-'''
-# 예제
 mean =  func_imputer( df , 'Age' ,'mean' ) # 평균으로 대치
 median = func_imputer( df , 'Age' ,'median' ) #중앙값으로 대치
 most_frequent = func_imputer( df , 'Age' ,'most_frequent' ) # 최빈값 으로 대치
 
-print(df.Age[888])
-print(mean[888])
-print(median[888])
-print(most_frequent[888])
+print('원본 : ',df.Age[888])
+print('평균 : ',mean[888])
+print('중앙 : ',median[888])
+print('최빈 : ',most_frequent[888])
 
-
+# MISC 자동 대치
+aa = df['Age'].values.reshape(-1,1)
+imputer_mice = IterativeImputer( max_iter=10 ,  random_state=900 , imputation_order='roman' , skip_complete=True , initial_strategy='mean')
+numeric_data = imputer_mice.fit_transform( aa )
+print( np.round(numeric_data[888],0) )
 
 
 
@@ -85,4 +89,7 @@ print(most_frequent[888])
 
 #print( df[ df.Embarked.isna() ] ) # Embarked isna 인값 추출 2건의 데이터중 동승자가 전혀 없다 추정할수 없다.
 #print( df[ df.Age.isna() ] ) # Age iana 추출
+
+
+
 

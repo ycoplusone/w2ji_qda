@@ -11,3 +11,5 @@
 [ 3.5 Binning & Creating Dummy variables ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03_05.py)
 
 [ 3.6 예제 데이터 및 실습문제 ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03_06.py)
+
+[ 3.7 시군구별 음식점 데이터 ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03_07.py)

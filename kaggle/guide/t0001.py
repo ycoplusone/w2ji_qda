@@ -23,13 +23,23 @@ import scipy as sp
 import pandas as pd
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import SimpleImputer , IterativeImputer
+from sklearn.linear_model import LinearRegression
+
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
 import klib
+from autoimpute.imputations import SingleImputer , MultipleImputer , MiceImputer
 
 # 1. 데이터 로딩
 df = pd.read_csv('D:\\python_workspace\\w2ji_qda\\kaggle\\guide\\data\\titanic\\train.csv')
+
+# 
+df['Sex'].replace({'male':0,'female':1},inplace=True)   #남자 0 , 여자 1
+df['Embarked'].replace({np.nan:0,'S':1,'C':2,'Q':3},inplace=True) #nan값은 이후 다시 대치처리 한다.
+
+
+
 
 '''
 1. 데이터 전처리 과정에서 결측치 처리.
@@ -167,16 +177,54 @@ print( df_pairwise.info() ) #데이터의 약20%가 제거 되었다. 전술했�
 '''
 
 '''
-5. 결츠치 대치(Imputation)
+5. 결측치 대치(Imputation)
 5-1. Single Imputation(단순대체법)
     - 결측치의 대체값으로 하나의 값을 선정하는것.
     - mean,correlation, 회귀계수와 같은 파라미터 추정 시 편향(bias) 발생가능성 높음.
     - 이러한 추정 편향으로 인해 아예 결측값을 제거하는것보다 통계적 특성이 나빠질수 있음.
-
+    ※ 단순대치법 종류
+        - mean imputation : 데이터의 특정값(mean,median,mode)으로 결측값을 대치
+            평균대치 -> 표본오차 왜곡 발생, 축소 -> 부정확한  p-value -> 검정력 약화
+        - Regression imputation : 회귀식을 만들어 예측 된 값으로 결측값 대치
+            회귀 예측값 대치 -> 잔차 축소 , 왜곡 -> R^2 증가 , 왜곡
+        - Stochastic regression imputation
+            회귀 예측값으로 대치하는것과 유사하나, random error thrm을 추가하여 예측값에 변동을 주는 방법
+            표본오차의 과소 추정문제 있음.
+        - Hot deck imputation : 
+            * 자료에서 표본을 바탕으로 비슷한 규칙을 찾아 결측값을 대체
+            * 다른 변수에서 비슷한 값을 갖는 데이터 중에서 하나를 랜덤 샘플링하여 그 값을 복사
+            * 결측값이 존재하는 변수가 가질수 있는 값의 범위가 한정되어 있을때 사용
+        - Cold deck imputation
+            * 외부 출처에서 비슷한 연구를 찾아 결측값을 대치
+            * Hot deck imputation과 유사하나 어떠한 규칙(k번째 샘플가져온다 등..)에서 하나를 선정
 '''
+# mean imputation 예제
+def func_imputer(df , col , str ):
+    # 대치 함수  
+    #df : DataFrame
+    #col : 컬럼
+    #str : 'mean', 'median', 'most_frequent', 'constant' 만 가능 , 평균 ,중앙 , 최빈 , 정해진값
+    
+    # SimpleImputer의 인스턴스 생성
+    imputer_mean = SimpleImputer(strategy= str)
+    # 열을 2d 배열로 재구성 해야 한다.
+    __df = df[col].values.reshape(-1,1)     
+    return  np.round( imputer_mean.fit_transform( __df ) ,0)
+
+mean =  func_imputer( df , 'Age' ,'mean' ) # 평균으로 대치
+median = func_imputer( df , 'Age' ,'median' ) #중앙값으로 대치
+most_frequent = func_imputer( df , 'Age' ,'most_frequent' ) # 최빈값 으로 대치
+
+print('원본 : ', df.Age[888])
+print('평균 : ', mean[888])
+print('중앙 : ', median[888])
+print('최빈 : ', most_frequent[888])
 
 
+print(df.info())
 
+sns.heatmap(data = df.corr(), annot=True, fmt = '.2f', linewidths=.5, cmap='Blues')
+plt.show()
 
 
 

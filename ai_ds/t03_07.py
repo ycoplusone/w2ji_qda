@@ -20,3 +20,12 @@ import sqlite3
     * 음식점 데이터에서 ’업태구분명’은 음식점의 종류이다. 분석에서 관심 업태는 [‘한식’, ‘치킨’, ‘분식’, ‘양식’, ‘식육(숯불구이)’, ‘중국식’, ‘일식’, ‘까페’, ‘패스트푸드’] 이고 이를 위해서 기존 저장된 업태를 아래와 같이 변경하여라
     * 지역별 관심 업태에 따른 음식점의 수를 구하라.
 '''
+
+# 1. 데이터 로드
+#df1 = pd.read_csv('http://bigdata.dongguk.ac.kr/lectures/AI/data/fulldata_07_24_04_P_%EC%9D%BC%EB%B0%98%EC%9D%8C%EC%8B%9D%EC%A0%90.csv',encoding='CP949')
+#df2 = pd.read_excel('D:\\python_workspace\\w2ji_qda\\ai_ds\\data\\개방_자치단체코드목록.xlsx')
+#df2.to_parquet('D:\\abc.parquet')
+df = pd.read_csv('http://bigdata.dongguk.ac.kr/lectures/AI/data/fulldata_07_24_04_P_%EC%9D%BC%EB%B0%98%EC%9D%8C%EC%8B%9D%EC%A0%90.csv',encoding='CP949')
+df.to_parquet('D:\\food.parquet')
+
+

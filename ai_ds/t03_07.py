@@ -8,8 +8,10 @@ import sqlite3
 '''
 3.7 시군구별 음식점 데이터
 - 데이터 
-    * 일반음식점(CSV파일)   : 음식점.parquet
+    * 일반음식점   : 음식점.parquet
+    * 자치단체코드  : addr.parquet
 - 문제
+    * 일반음식점 데이터에서 컬럼 개방자치단체코드와 자치단체코드 데이터의 시군구(자치단체)코드를 연결하여 음식점 소재지인 시군구 컬럼을 추가하라.
     * 전국 지자체(시군구)별 음식점의 수를 구하라
     * 전국 지자체(시군구)별 음식점의 수를 폐업또는 영업중으로 구분하여 구하라
     * 위 데이터에서 경복에 소재한 음식점 중에서 현재 시군구별로 영업중인 음식점의 수를 구하라
@@ -20,10 +22,22 @@ import sqlite3
 '''
 
 # 1. 데이터 로드
-df = pd.read_parquet('D:\\python_workspace\\w2ji_qda\\ai_ds\\data\\음식점.parquet')
+df1 = pd.read_parquet('D:\\python_workspace\\w2ji_qda\\ai_ds\\data\\음식점.parquet')
+df2 = pd.read_parquet('D:\\python_workspace\\w2ji_qda\\ai_ds\\data\\addr.parquet')
+_nm = ''
+def sido(x):
+    global _nm
+    _rt = ''    
+    if x == None:
+        _rt = _nm
+    else:
+        _nm = x
+        _rt = x  
+    return _rt
+df2['시도명'] = df2['시도명'].apply(sido)
 
 
 
-print(df.info())
-print(df.head())
 
+df3 = df1.merge(df2[['시군구(자치단체)코드','시도명','시군구명']] , left_on='개방자치단체코드' , right_on='시군구(자치단체)코드')
+print(df3)

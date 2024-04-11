@@ -1,4 +1,4 @@
-# 인공지능/데이터과학
+# 데이터 랭글링
 
 [ 3.1 데이터 랭글링(data wrangling) ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03/t03_01.py)
 
@@ -13,3 +13,7 @@
 [ 3.6 예제 데이터 및 실습문제 ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03/t03_06.py)
 
 [ 3.7 시군구별 음식점 데이터 ](https://github.com/ycoplusone/w2ji_qda/blob/main/ai_ds/t03/t03_07.py)
+
+# 회귀분석(regression analysis)
+
+

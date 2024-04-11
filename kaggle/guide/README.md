@@ -1,3 +1,14 @@
+# 30Days of ML
+[ Days2-7 ](https://www.kaggle.com/learn/python)
+[ Days8-14 part1 ](https://www.kaggle.com/learn/intro-to-machine-learning)
+[ Days8-14 part2 ](https://www.kaggle.com/learn/intermediate-machine-learning)
+
+
+
+
+
+
+
 # 타이타닉 생존자 분석
 
 [1.결측치 처리 방법 가이드](https://github.com/ycoplusone/w2ji_qda/blob/main/kaggle/guide/t0001.py) 

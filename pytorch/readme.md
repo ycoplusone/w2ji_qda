@@ -41,5 +41,8 @@
 서로 코딩 스타일과 문법이 다르고 공개하는 모델이 다르다.
 ***
 > # 1.4 파이토치 권고 코딩 스타일  
-
-
+***
+# 
+> [1.사인 함수 예측](https://colab.research.google.com/drive/1cu7iaM0Q6I3hIl6zcWtX7qAoT5cvlKw5)
+> [2.보스턴 집값 예측](https://colab.research.google.com/drive/14oW7FqSp0A7TuZkAf0n7flhSUXzaupok)
+> [3.손글씨분류하기](http://colab.research.google.com/drive/14Sfzm1idy8_EbS7DwzqzR7Dkk4TEKTVh)

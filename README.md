@@ -1,4 +1,7 @@
 데이터 분석과 쿼트 둘다."# w2ji_qda" 
 
-
-됨?
+- ai_ds
+- dbms
+- kaggle
+- lib
+- pytorch

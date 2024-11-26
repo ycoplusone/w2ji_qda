@@ -50,5 +50,24 @@
 >> [테스트코드](datascience\test_00011\인코딩.py).  
 
 
+## [1.2 머신러닝용 파이썬 패키지](https://datascienceschool.net/03%20machine%20learning/01.02%20%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EC%9A%A9%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%ED%8C%A8%ED%82%A4%EC%A7%80.html)
+> ### 기본 패키지.  
+>> - numpy , scipy , pandas ,  matplotlib , seaborn.  
+> ### 머신러닝 패키지.   
+>> - statsmodels : 추정및 검저으 회귀분석, 시계열분석들의 기능을 제공한다.  
+>> - scikit-learn : 다양한 머신러닝 모형을 제공한다.    
+> ### 데이터 전처리용 패키지.  
+>> - missingno : 데이터 프레임에서 누락된 데이터를 찾고 시각화하는 기능을 제공한다.  
+>> - patsy : pandas 데이터 프레임데이터에서 선택, 변경 기능 제공한다 statsmodels의 기본 패키지이다.  
+> ### 텍스트 전처리용 패키지.  
+>> - nltk , spacy , konlpy , soynlp , gensim.  
+> ### 이미지 전처리용 패키지.  
+>> - opencv.  
+> ### 사운드 전처리용 패키지.  
+>> - librosa .  
+> ### 지리정보 전처리용 패키지.  
+>> - geopandas 패키지.  
 
-
+## [2.1 데이터 전처리 기초](https://datascienceschool.net/03%20machine%20learning/02.01%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%84%EC%B2%98%EB%A6%AC%20%EA%B8%B0%EC%B4%88.html).  
+> ### missingno 패키지 : missingno 패키지는 pandas 데이터 프레임에서 결측 데이터를 찾는 기능을 제공한다.  
+>> - .   

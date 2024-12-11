@@ -70,4 +70,5 @@
 
 ## [2.1 데이터 전처리 기초](https://datascienceschool.net/03%20machine%20learning/02.01%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%A0%84%EC%B2%98%EB%A6%AC%20%EA%B8%B0%EC%B4%88.html).  
 > ### missingno 패키지 : missingno 패키지는 pandas 데이터 프레임에서 결측 데이터를 찾는 기능을 제공한다.  
->> - .   
+> ### [patsy 패키지](datascience\test_00021\test_patsy.py)
+> ### [sklearn.preprocessing 패키지](datascience\test_00021\test_sklearn_preprocessing.py)
